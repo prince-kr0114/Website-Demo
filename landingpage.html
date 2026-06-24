@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute Landing Page</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Institute Logo" class="logo-img">
+            <h1>Institute 11th Foundation</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#certificate">Certificate</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to OUR Institute</h1>
+        <p>Your journey to excellence starts here!</p>
+        <a href="#gallery" class="cta-btn">Explore Gallery</a>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Our Gallery</h2>
+        <div class="filter">
+            <label for="date-filter">Filter by Date:</label>
+            <input type="date" id="date-filter">
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Gallery items will be added via JS -->
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile">
+        <h2>User Profile</h2>
+        <div class="profile-container">
+            <img src="default-profile.png" alt="Profile Photo" id="profile-photo" class="profile-img">
+            <input type="file" id="photo-upload" accept="image/*">
+            <input type="text" id="profile-name" placeholder="Enter your name">
+            <button onclick="saveProfile()">Save Profile</button>
+            <div id="profile-details"></div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback">
+        <h2>Submit Feedback</h2>
+        <form id="feedback-form">
+            <input type="text" id="feedback-name" placeholder="Your Name" required>
+            <textarea id="feedback-message" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="feedback-list"></div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section id="certificate" class="certificate">
+        <h2>Generate Certificate</h2>
+        <input type="text" id="cert-name" placeholder="Enter Student Name">
+        <button onclick="generateCertificate()">Generate Certificate</button>
+        <div id="certificate-preview" class="cert-preview">
+            <div id="certificate-content">
+                <h1>Certificate of Achievement</h1>
+                <p>This is to certify that</p>
+                <h2 id="cert-student-name">Student Name</h2>
+                <p>has successfully completed the course at XYZ Institute.</p>
+                <p>Date: <span id="cert-date"></span></p>
+            </div>
+        </div>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 XYZ Institute. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="../JS/script.js"></script>
+</body>
+</html>
